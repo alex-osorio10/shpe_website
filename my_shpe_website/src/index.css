@@ -1,0 +1,145 @@
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh; /* Ensure body takes full viewport height */
+  display: flex; /* Flexbox to allow flex behavior */
+  flex-direction: column; /* Column direction */
+  position: relative; /* Relative position to contain absolute elements */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Main content should grow to fill available space */
+main {
+  flex: 1; /* Grow to fill the remaining space */
+  display: flex; /* Allows flexible content */
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  width: 100%; /* Ensure main takes full width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styling remains the same */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  width: 100%; /* Ensure header takes full width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 40px;
+  background-color: black;
+  margin: 0 10px 0 5px; /* Adjusted margin to move line to the left */
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Footer styling to stick to the bottom */
+footer {
+  position: absolute; /* Position absolutely within the parent */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background-color: #1e2b4f;
+  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Footer container styling */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Styling for the "Join the Familia" section */
+.footer-container h2 {
+  font-size: 2rem;
+  color: #c39c37;
+  margin: 20px 0 10px;
+  text-align: center;
+  font-family: 'Georgia', Arial, sans-serif; /* Updated font family */
+}
+
+.footer-container p {
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.ideal-logic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #ffffff; /* White border */
+  color: #ffffff; /* White text color */
+  background-color: transparent; /* Transparent background */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px;
+  margin-bottom: 0px; /* Space between sections */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Georgia', Arial, sans-serif;
+}
+
+.ideal-logic-button:hover {
+  background-color: #ffffff; /* Hover background color */
+  color: #1e2b4f; /* Text color change on hover */
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 15px;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: 'Georgia', Arial, sans-serif; /* Updated font family */
+}
