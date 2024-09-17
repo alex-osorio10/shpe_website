@@ -6,23 +6,34 @@ body {
   height: 100vh; /* Ensure body takes full viewport height */
   display: flex; /* Flexbox to allow flex behavior */
   flex-direction: column; /* Column direction */
-  position: relative; /* Relative position to contain absolute elements */
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Main content should grow to fill available space */
-main {
-  flex: 1; /* Grow to fill the remaining space */
-  display: flex; /* Allows flexible content */
+/* Main container for the entire app */
+.app-container {
+  display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  margin-top: 80px; /* Compensate for fixed header */
+  margin-bottom: 0; /* Remove extra margin to avoid white space */
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1; /* Allow main content to take the remaining space */
   width: 100%; /* Ensure main takes full width */
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0; /* Remove default margin to avoid extra space */
+  padding-bottom: 80px; /* Compensate for footer height */
 }
 
-/* Header styling remains the same */
+/* Header styling */
 header {
+  position: fixed; /* Fix header at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 10; /* Higher z-index to ensure it appears above footer */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,19 +68,14 @@ header h1 {
   margin: 0;
 }
 
-/* Footer styling to stick to the bottom */
+/* Footer */
 footer {
-  position: absolute; /* Position absolutely within the parent */
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
-  background-color: #1e2b4f;
-  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
+  background-color: #1e2b4f; /* Background color */
+  text-align: center; /* Center text */
+  padding: 15px 20px; /* Adjust padding */
+  margin-top: auto; /* Pushes footer to the bottom */
   width: 100%;
+  box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -142,4 +148,25 @@ footer p {
   font-size: 1rem;
   color: #ffffff;
   font-family: 'Georgia', Arial, sans-serif; /* Updated font family */
+}
+
+.background-image-container {
+  background-image: url('./assets/images/psu_background_switch.png'); /* Correct path to the image */
+  background-repeat: no-repeat; /* No Repeat */
+  background-position: center; /* Center the Image */
+  background-attachment: scroll; /* Change to scroll to allow content below */
+  background-size: cover; /* Cover the entire area */
+  min-height: 50vh; /* Set minimum height to 80% of the viewport */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Flexbox for content alignment */
+  flex-direction: column; /* Column alignment */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  overflow: hidden; /* Prevent overflow */
+  position: relative; /* Ensure the background stays in place */
+  z-index: 1; /* Lower z-index so it stays below header and footer */
 }

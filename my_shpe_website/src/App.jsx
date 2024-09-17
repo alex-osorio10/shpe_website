@@ -1,14 +1,16 @@
 // src/App.jsx
+import React from 'react';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import Body from './Body.jsx';
+import BackgroundImage from './BackgroundImage.jsx';
 
 function App() {
   return (
-    <div className="app-container"> {/* Ensure this container does not limit width */}
+    <div className="app-container">
       <Header />
-      <main> {/* Main container for Body */}
-        <Body />
+      <main className="main-content">
+        <BackgroundImage />
+        {/* Add more content as needed */}
       </main>
       <Footer />
     </div>
