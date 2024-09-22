@@ -5,13 +5,14 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Georgia', Arial, sans-serif; /* Set default font to Georgia with Arial fallback */
   background-color: #ffffff;
-  height: 100vh; /* Ensure body takes full viewport height */
-  display: flex; /* Flexbox to allow flex behavior */
-  flex-direction: column; /* Column direction */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
+
 
 /* Main container for the entire app */
 .app-container {
@@ -23,34 +24,59 @@ body {
 
 /* Main content styling */
 .main-content {
-  display: flex; /* Use Flexbox for alignment */
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: flex-start; /* Align items to the top */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove padding */
-  overflow: hidden; /* Prevent overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  margin-top: 70px; /* Adjust this based on the header's final height */
+  padding: 0;
+  overflow: hidden;
 }
+
 
 
 /* Header styling */
 header {
-  position: fixed; /* Fix header at the top */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  right: 0; /* Align to the right */
-  z-index: 10; /* Higher z-index to ensure it appears above footer */
+  position: fixed; /* Keep the header at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* Ensure header stays above everything */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  width: 100%; /* Ensure header takes full width */
+  width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 24px; /* Size of the icon */
+  color: #333; /* Initial color */
+  transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.menu-icon:hover {
+  color: #F26534; /* Change color to orange on hover */
+  transform: scale(1.2); /* Slightly grow the icon on hover */
 }
 
 .logo-container {
@@ -70,48 +96,49 @@ header {
   margin: 0 10px 0 5px; /* Adjusted margin to move line to the left */
 }
 
-header h1 {
-  font-size: 1.5rem;
-  color: #333;
-  margin: 0;
+.menu-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
+.menu-icon-button:focus {
+  outline: none;
+}
+
+
 
 /* Footer */
 footer {
   background-color: #1e2b4f; /* Background color */
   text-align: center; /* Center text */
-  padding: 15px 20px; /* Adjust padding */
+  padding: 20px 0; /* Add padding for spacing */
   margin-top: auto; /* Pushes footer to the bottom */
-  width: 100%;
+  width: 100%; /* Full width */
   box-shadow: 0 -4px 6px rgba(255, 255, 255, 0.1);
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Footer container styling */
 .footer-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
+  align-items: center; /* Center the elements horizontally */
+  justify-content: center; /* Center the content vertically */
+  width: 100%; /* Full width */
   padding: 20px;
 }
 
-/* Styling for the "Join the Familia" section */
 .footer-container h2 {
-  font-size: 2rem;
-  color: #c39c37;
-  margin: 20px 0 10px;
-  text-align: center;
-  font-family: 'Georgia', Arial, sans-serif; /* Updated font family */
+  text-align: center; /* Ensure all text is centered */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
+  color: #CA9A12; /* White text color */
+  margin: 10px 0;
 }
 
 .footer-container p {
-  font-size: 1rem;
+  text-align: center; /* Ensure all text is centered */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
   color: #ffffff; /* White text color */
-  text-align: center;
-  margin: 0 0 20px;
+  margin: 10px 0;
 }
 
 .ideal-logic-button {
@@ -122,10 +149,11 @@ footer {
   background-color: transparent; /* Transparent background */
   text-decoration: none; /* Remove underline */
   border-radius: 5px;
-  margin-bottom: 0px; /* Space between sections */
+  margin-bottom: 20px; /* Add space between sections */
+  margin-top: 20px;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-  font-family: 'Georgia', Arial, sans-serif;
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling for button */
 }
 
 .ideal-logic-button:hover {
@@ -135,9 +163,9 @@ footer {
 
 .social-media {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+  justify-content: center; /* Center social media icons */
+  align-items: center; /* Align icons vertically */
+  margin: 15px 0;
 }
 
 .social-icon {
@@ -152,111 +180,262 @@ footer {
 }
 
 footer p {
-  margin: 0;
   font-size: 1rem;
-  color: #ffffff;
-  font-family: 'Georgia', Arial, sans-serif; /* Updated font family */
+  color: #ffffff; /* White text color */
+  font-family: 'Georgia', Arial, sans-serif; /* Font styling */
+}
+
+
+
+/* Slider container to hold the entire slider */
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden; /* Hide the overflowing slides */
+}
+
+/* Wrapper for the sliding effect */
+.slider-wrapper {
+  display: flex; /* Make the slides align horizontally */
+  width: 300%; /* Depends on the number of slides, 100% for each slide */
+  transition: transform 0.05s ease-in-out; /* Smooth slide transition */
+}
+
+/* Individual slide */
+.slide {
+  min-width: 100vw; /* Each slide takes the full width of the viewport */
+  height: 80vh; /* Full height for the slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .background-image-container {
-  background-image: url('./assets/images/psu_background_switch.png'); /* Correct path to the image */
-  background-repeat: no-repeat; /* No Repeat */
-  background-position: center; /* Center the Image */
-  background-attachment: scroll; /* Change to scroll to allow content below */
-  background-size: cover; /* Cover the entire area */
-  min-height: 50vh; /* Set minimum height to 80% of the viewport */
-  width: 100vw; /* Full viewport width */
-  display: flex; /* Flexbox for content alignment */
-  flex-direction: column; /* Column alignment */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  color: white; /* Text color */
-  text-align: center; /* Center the text */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  overflow: hidden; /* Prevent overflow */
-  position: relative; /* Ensure the background stays in place */
-  z-index: 1; /* Lower z-index so it stays below header and footer */
-}
-
-/* Styling for the Upcoming Events container */
-/* Styling for the Upcoming Events container */
-.upcoming-events-container {
-  background-color: #1e2b4f; /* Background color */
-  color: #ffffff; /* White text color */
-  width: 100%; /* Full width to touch the sides */
-  text-align: center; /* Center align text */
-  padding: 20px; /* Add padding for spacing */
-  border-top: 2px solid #ffffff; /* Optional: Add a border */
-  border-bottom: 2px solid #ffffff; /* Optional: Add a border */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 80vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* Space between elements */
-  margin: 0; /* Remove margins */
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Event content styling */
+.images-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out; /* Smooth slide transition */
+}
+
+.image-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.background-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+
+/* Ensure the overlay content stays above the images */
+.overlay-content {
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure the content stays above the images */
+  text-align: center;
+  width: 90%; /* Ensure the text doesn't overflow outside */
+  max-width: 1000px; /* Optional: Set a max width for larger screens */
+  overflow: hidden; /* Prevent overflow */
+  white-space: normal; /* Allow text to wrap */
+}
+
+/* Styling for the main header */
+.overlay-content h1 {
+  font-size: 4rem;
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 2px 8px 10px #000000;
+  margin-bottom: 20px;
+}
+
+/* Styling for the paragraph below the header */
+.overlay-content p {
+  font-size: 2.0rem;
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 2px 8px 10px #000000;
+  margin-top: 0;
+}
+
+.psu-logo {
+  width: 150px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styling for the Learn More button */
+.learn-more-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 3px solid #4f661a;
+  color: #ffffff;
+  background-color: #6E8D23;
+  text-decoration: none;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  font-family: 'Georgia', Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.learn-more-button:hover {
+  background-color: #ffffff;
+  color: #1e2b4f;
+  border-color: #000000;
+}
+
+/* Arrow Styling */
+.arrow-left, .arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.arrow-left {
+  left: 30px;
+}
+
+.arrow-right {
+  right: 30px;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  color: #6E8D23;
+}
+
+/* CSS to handle fading effect for the text */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for the Upcoming Events container */
+.upcoming-events-container {
+  background-color: #1e2b4f;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  margin: 0;
+}
+
+/* Upcoming Events Heading */
+.upcoming-events-container h2 {
+  font-size: rem; /* You can adjust the size as needed */
+  font-family: 'Georgia', Arial, sans-serif;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
 .event-content {
   display: flex;
-  flex-direction: row; /* Keep the images side by side */
-  justify-content: center; /* Ensure the items are centered horizontally */
-  align-items: center; /* Ensure the items are centered vertically */
-  width: 100%; /* Full width */
-  gap: 2vw; /* Space between elements */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2vw;
   padding: 2vw;
   background-color: #f5f5f5;
 }
 
-
-/* Flyer Image container styling with a white background */
 .event-image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
-  background-color: #ffffff; /* White background similar to the text overlay */
-  border-radius: 10px; /* Match the border radius of the text overlay */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for consistency */
-  padding: 10px; /* Add padding */
-  margin: 0; /* Ensure it touches the top and bottom */
-}
-
-.event-image {
-  max-width: 100%; /* Ensure image scales within container */
-  height: auto;
-  object-fit: contain; /* Ensure the entire image fits within the container */
-  margin: 0 auto; /* Center image inside its container */
-  border-radius: 5px; /* Slightly round the image itself */
-}
-
-/* Text overlay container styling */
-.event-text-overlay {
-  position: relative;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  background-color: #f5f5f5; /* Match gray background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0; /* Remove margin */
-  padding: 10px; /* Add padding */
+  max-width: 100%; /* Allow container to scale */
+  padding: 0;
+  margin: 0;
 }
 
-
-.blank-image {
-  max-width: 100%; /* Ensure image scales within container */
+.event-image {
+  width: 100%; /* Ensure image scales with container */
   height: auto;
-  object-fit: contain; /* Ensure the entire blank image fits within the container */
-  margin: 0 auto; /* Center image inside its container */
-  border-radius: 10px;
+  object-fit: contain;
+  max-width: 100%; /* Ensure image scales down properly */
+  margin: 0 auto;
+}
+
+.event-text-overlay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 .event-text {
-  position: absolute;
   text-align: center;
-  padding: 2vw;
+  padding: 10px;
   color: #333;
 }
 

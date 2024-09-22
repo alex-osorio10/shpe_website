@@ -23,10 +23,10 @@ function Footer() {
         {/* Follow Us Section */}
         <h2>Follow Us!</h2>
         <div className="social-media">
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/psu_shpe/" target="_blank" rel="noopener noreferrer">
             <img src={instagramLogo} alt="Instagram Logo" className="social-icon" />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/PSUSHPE/" target="_blank" rel="noopener noreferrer">
             <img src={facebookLogo} alt="Facebook Logo" className="social-icon" />
           </a>
           <a href="mailto:shpe@pdx.edu" target="_blank" rel="noopener noreferrer">
