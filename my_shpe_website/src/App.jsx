@@ -28,6 +28,16 @@ const ScrollToUpcomingEvents = () => {
 
   return null;
 };
+// src/App.jsx
+import React from 'react';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+import BackgroundImage from './BackgroundImage.jsx';
+import UpcomingEvents from './UpcomingEvents.jsx';
+
+import gameNightFlyer from './assets/images/game_night_flyer.jpg';
+import pastEventFlyer from './assets/images/past_event_flyer.jpg';
+import pastEventFlyer2 from './assets/images/past_event_flyer_2.jpg'; // Import the new flyer
 
 function App() {
   return (
