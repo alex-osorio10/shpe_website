@@ -3,7 +3,7 @@ import React from 'react';
 
 const UpcomingEvents = ({ flyerImage, eventTitle, eventDescription, eventDetails, eventType }) => {
   return (
-    <section className="upcoming-events-container">
+    <section id={eventType === 'upcoming' ? 'upcoming-events' : ''} className="upcoming-events-container">
       <h2 className="events-heading">
         {eventType === 'upcoming' ? 'Upcoming Events!' : 'Past Events'}
       </h2>

@@ -1,82 +1,45 @@
 /* General body styling */
 * {
-  box-sizing: border-box; /* Ensure padding and borders don't affect width calculations */
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Georgia', Arial, sans-serif; /* Set default font to Georgia with Arial fallback */
+  font-family: 'Georgia', Arial, sans-serif;
   background-color: #ffffff;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
 }
 
-
-/* Main container for the entire app */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure it takes the full viewport height */
-  margin: 0; /* Remove margin to avoid white space */
 }
 
-/* Main content styling */
 .main-content {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
-  margin-top: 70px; /* Adjust this based on the header's final height */
+  margin-top: 90px; /* Ensure content is below the fixed header */
   padding: 0;
-  overflow: hidden;
 }
 
-
-
-/* Header styling */
 header {
-  position: fixed; /* Keep the header at the top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999; /* Ensure header stays above everything */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  z-index: 999; /* Ensures the header stays above other content */
+  background-color: white;
   padding: 15px 20px;
-  background-color: #fff;
+  height: 90px; /* Set consistent header height */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Header styles */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.menu-button {
-  cursor: pointer;
-}
-
-.menu-icon {
-  font-size: 24px; /* Size of the icon */
-  color: #333; /* Initial color */
-  transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effects */
-}
-
-.menu-icon:hover {
-  color: #F26534; /* Change color to orange on hover */
-  transform: scale(1.2); /* Slightly grow the icon on hover */
+  display: flex; /* Allows flex positioning of header items */
+  justify-content: space-between; /* Ensures content inside is spaced correctly */
+  align-items: center; /* Align items vertically */
 }
 
 .logo-container {
@@ -86,25 +49,84 @@ header {
 
 .logo {
   height: 50px;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .vertical-line {
   width: 1px;
-  height: 40px;
+  height: 50px;
   background-color: black;
-  margin: 0 10px 0 5px; /* Adjusted margin to move line to the left */
+  margin: 0 10px;
 }
 
-.menu-icon-button {
-  background: none;
-  border: none;
+.menu-button {
   cursor: pointer;
 }
 
-.menu-icon-button:focus {
-  outline: none;
+.menu-icon {
+  font-size: 24px;
+  color: #333;
+  transition: transform 0.3s, color 0.3s;
+  margin-left: auto; /* Ensures the menu button is pushed to the right */
 }
+
+.menu-icon:hover {
+  color: #6E8D23;
+  transform: scale(1.2);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  position: fixed; /* Dropdown is fixed to move with the page */
+  top: 90px; /* Positioned directly below the header */
+  right: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure it stays on top of other elements */
+  width: 200px;
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item {
+  text-align: center;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  padding: 15px 20px;
+}
+
+.dropdown-item a:hover {
+  background-color: #6E8D23;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    width: 100%; /* Full width on mobile */
+  }
+
+  .dropdown-item {
+    padding: 15px 0;
+  }
+}
+
+
 
 
 
@@ -405,6 +427,18 @@ footer p {
   background-color: #f5f5f5;
 }
 
+.events-heading {
+  font-size: 1.8rem; /* Adjust size as needed */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff; /* You can adjust the color as per your theme */
+  border-bottom: 4px solid #ffffff; /* Adds an underline */
+  display: inline-block; /* Ensure the underline is applied only to the text */
+  padding-bottom: 5px; /* Adds some space between the text and the underline */
+}
+
+
 .event-image-container {
   flex: 1;
   display: flex;
@@ -468,3 +502,135 @@ footer p {
 }
 
 
+
+
+
+
+
+
+
+
+
+.officers-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.officers-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.officer-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+  min-height: 450px; /* Minimum height for the cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.officer-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image is scaled properly */
+  border-radius: 0; /* No more circle effect */
+}
+
+.officer-info {
+  margin-top: 10px;
+  flex-grow: 1; /* Ensure officer info takes up the available space */
+}
+
+.officer-info p {
+  margin: 5px 0;
+}
+
+.officer-info .major-label {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.linkedin-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.linkedin-icon {
+  color: black;
+  font-size: 2.0rem;
+  margin-bottom: 15px; /* Adds margin to the bottom */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for both color and size */
+}
+
+.linkedin-icon:hover {
+  color: #0077b5; /* Change color on hover */
+  transform: scale(1.2); /* Increase size by 20% on hover */
+}
+
+
+/* Additional class for adding blank space for shorter names */
+.short-name {
+  padding-bottom: 15px; /* Adds space below shorter names */
+}
+
+
+
+
+.about-us-container {
+  margin-top: 100px; /* Adjusted margin */
+  padding: 20px;
+  background-color: #1A2B52; /* Set the background color outside the boxes */
+}
+
+.about-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #e3ebff; /* Green box background */
+  border: 8px solid black; /* Black border */
+}
+
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 90%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  color: rgb(0, 0, 0); /* Ensure text is visible on green background */
+}
+
+.about-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.about-details {
+  font-size: 1rem;
+}

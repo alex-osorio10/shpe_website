@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
 import psuBackground from './assets/images/psu_background_switch.png';
 import speakersImage from './assets/images/speakers_switch.png';
 import membersImage from './assets/images/members_shpe_switch.png';
@@ -13,17 +14,21 @@ const slideContent = [
   {
     title: 'PORTLAND STATE UNIVERSITY',
     description: '"Let Knowledge Serve the City."',
-    buttonText: 'GET STARTED!',
+    buttonText: 'GET STARTED',
+    buttonAction: 'external', // Type of action for the button
+    buttonLink: 'https://www.pdx.edu/civil-environmental-engineering/student-organizations', // External URL for this button
   },
   {
     title: 'SPEAKER SERIES',
     description: 'Join us for talks from industry leaders.',
     buttonText: 'SEE UPCOMING EVENTS',
+    buttonAction: 'scrollToUpcomingEvents', // Custom action for scrolling
   },
   {
     title: 'MEET OUR MEMBERS',
     description: 'Connect with our SHPE community.',
-    buttonText: 'JOIN THE COMMUNITY',
+    buttonText: 'OFFICERS',
+    buttonAction: 'navigateToOfficers', // Custom action for routing to officers page
   },
 ];
 
@@ -31,61 +36,54 @@ const BackgroundImage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false); // Handle slide transition
   const [isFading, setIsFading] = useState(false); // Handle fade in/out
+  const navigate = useNavigate(); // Use React Router's navigate hook
 
   const nextImage = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-  
-      // Immediately slide the image
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-  
-      // Start fading out the text and logo
+      setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
       setIsFading(true);
-  
-      // Delay the content update by 0.25s (250ms) to let the fade-out happen first
       setTimeout(() => {
-        // Change the text and logo after 0.25s, and then fade in the new content
-        setIsFading(false); // Trigger the fade-in of the new content
-        setIsTransitioning(false); // Reset transition state
-      }, 250); // 0.25-second delay
+        setIsFading(false);
+        setIsTransitioning(false);
+      }, 250);
     }
   };
-  
+
   const prevImage = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-  
-      // Immediately slide the image
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      );
-  
-      // Start fading out the text and logo
+      setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
       setIsFading(true);
-  
-      // Delay the content update by 0.25s (250ms) to let the fade-out happen first
       setTimeout(() => {
-        // Change the text and logo after 0.25s, and then fade in the new content
-        setIsFading(false); // Trigger the fade-in of the new content
-        setIsTransitioning(false); // Reset transition state
-      }, 250); // 0.25-second delay
+        setIsFading(false);
+        setIsTransitioning(false);
+      }, 250);
     }
   };
-  
-  
-  
-  
-  
 
+  // Handle button click based on the current slide's action type
+  const handleButtonClick = () => {
+    const { buttonAction, buttonLink } = slideContent[currentImageIndex];
+
+    if (buttonAction === 'external') {
+      window.open(buttonLink, '_blank'); // Open external link in a new tab
+    } else if (buttonAction === 'scrollToUpcomingEvents') {
+      const upcomingEventsSection = document.getElementById('upcoming-events');
+      if (upcomingEventsSection) {
+        upcomingEventsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (buttonAction === 'navigateToOfficers') {
+      navigate('/officers'); // Navigate to officers page
+    }
+  };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsTransitioning(false); // Reset transition flag after 1s
-    }, 1000); // Set the delay to match the transition duration
+    }, 1000);
 
-    return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
+    return () => clearTimeout(timeoutId);
   }, [currentImageIndex]);
 
   return (
@@ -99,11 +97,7 @@ const BackgroundImage = () => {
       >
         {images.map((image, index) => (
           <div className="image-slide" key={index}>
-            <img
-              src={image}
-              alt={`Slide ${index}`}
-              className="background-slide-image"
-            />
+            <img src={image} alt={`Slide ${index}`} className="background-slide-image" />
           </div>
         ))}
       </div>
@@ -121,9 +115,9 @@ const BackgroundImage = () => {
         <h1>{slideContent[currentImageIndex].title}</h1> {/* Dynamic title */}
         <p>{slideContent[currentImageIndex].description}</p> {/* Dynamic description */}
         <img src={psuLogo} alt="PSU Logo" className="psu-logo" />
-        <a href="#" className="learn-more-button">
+        <button className="learn-more-button" onClick={handleButtonClick}>
           {slideContent[currentImageIndex].buttonText} {/* Dynamic button text */}
-        </a>
+        </button>
       </div>
     </div>
   );
