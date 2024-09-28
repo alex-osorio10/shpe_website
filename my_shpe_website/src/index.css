@@ -277,85 +277,88 @@ footer p {
 /* Ensure the overlay content stays above the images */
 .overlay-content {
   position: absolute;
-  top: 50%; /* Vertically center */
-  left: 50%; /* Horizontally center */
+  top: 55%; /* Adjusted from 50% to move content slightly lower */
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10; /* Ensure the content stays above the images */
+  z-index: 10;
   text-align: center;
-  width: 90%; /* Ensure the text doesn't overflow outside */
-  max-width: 1000px; /* Optional: Set a max width for larger screens */
-  overflow: hidden; /* Prevent overflow */
-  white-space: normal; /* Allow text to wrap */
+  width: 85%; /* Reduced width from 90% for better fit on smaller screens */
+  max-width: 900px; /* Reduced from 1000px to ensure better responsiveness */
+  padding: 20px; /* Added padding for spacing */
+  overflow: hidden; 
+  white-space: normal;
 }
 
 /* Styling for the main header */
 .overlay-content h1 {
-  font-size: 4rem;
+  font-size: 3.5rem; /* Reduced from 4rem for better fit on smaller screens */
   font-family: 'Georgia', Arial, sans-serif;
   color: #ffffff;
   text-shadow: 2px 8px 10px #000000;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin to bring elements closer */
 }
 
 /* Styling for the paragraph below the header */
 .overlay-content p {
-  font-size: 2.0rem;
+  font-size: 1.8rem; /* Reduced from 2rem for better fit */
   font-family: 'Georgia', Arial, sans-serif;
   color: #ffffff;
   text-shadow: 2px 8px 10px #000000;
   margin-top: 0;
+  margin-bottom: 20px; /* Added margin-bottom for spacing between text and button/logo */
 }
 
+/* PSU Logo adjustments */
 .psu-logo {
-  width: 150px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  width: 130px; /* Reduced size from 150px for better fit on smaller screens */
+  margin-top: 10px; /* Added margin-top for better spacing */
+  margin-bottom: 20px; /* Increased margin-bottom for better spacing before button */
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Styling for the Learn More button */
-.learn-more-button {
-  display: inline-block;
-  padding: 15px 30px;
-  border: 3px solid #4f661a;
-  color: #ffffff;
-  background-color: #6E8D23;
-  text-decoration: none;
-  margin-top: 30px;
-  text-align: center;
-  font-size: 1.2rem;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
-  font-family: 'Georgia', Arial, sans-serif;
-  font-weight: bold;
-  border-radius: 0;
+/* Media queries for mobile adjustments */
+@media (max-width: 768px) {
+  .overlay-content {
+    top: 60%; /* Adjusted to move content slightly lower on mobile */
+    width: 90%; /* Increase width slightly on mobile */
+    max-width: 600px; /* Reduce max-width on smaller screens */
+  }
+
+  .overlay-content h1 {
+    font-size: 2.5rem; /* Reduce heading size for mobile */
+  }
+
+  .overlay-content p {
+    font-size: 1.2rem; /* Reduce paragraph size for mobile */
+  }
+
+  .psu-logo {
+    width: 100px; /* Reduce logo size for mobile */
+  }
 }
 
-.learn-more-button:hover {
-  background-color: #ffffff;
-  color: #1e2b4f;
-  border-color: #000000;
-}
 
 /* Arrow Styling */
 .arrow-left, .arrow-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
+  font-size: 2.5rem; /* Reduced size for better visibility */
   color: white;
   cursor: pointer;
   transition: color 0.3s ease;
   z-index: 2;
+  padding: 10px; /* Add padding for easier tapping on mobile */
 }
 
 .arrow-left {
-  left: 30px;
+  left: 10px; /* Move the arrows closer to the edges for more space */
 }
 
 .arrow-right {
-  right: 30px;
+  right: 10px;
 }
 
 .arrow-left:hover, .arrow-right:hover {
@@ -374,6 +377,35 @@ footer p {
 }
 
 
+/* Styling for the Learn More button */
+.learn-more-button {
+  display: inline-block;
+  padding: 16px 28px; /* Adjust padding for better fit */
+  border: 2px solid #4c6219; /* White border */
+  color: #ffffff; /* White text color */
+  background-color: #6E8D23; /* PSU green background */
+  text-decoration: none; /* Remove underline */
+  margin-top: 20px; /* Add some space from the content above */
+  text-align: center;
+  font-size: 1.2rem; /* Ensure font is readable */
+  font-family: 'Georgia', Arial, sans-serif; /* Ensure consistency with other fonts */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transitions for hover */
+}
+
+.learn-more-button:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #000000; /* Green text on hover */
+  border-color: #000000; /* Green border on hover */
+}
+
+/* Media queries for mobile adjustments */
+@media (max-width: 768px) {
+  .learn-more-button {
+    font-size: 1rem; /* Adjust button size for mobile */
+    padding: 10px 20px; /* Adjust padding for better fit on smaller screens */
+  }
+}
 
 
 
