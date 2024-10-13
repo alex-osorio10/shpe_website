@@ -27,24 +27,32 @@ body {
   padding: 0;
 }
 
-header {
+/* General Header Styles */
+.header-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999; /* Ensures the header stays above other content */
+  z-index: 999;
   background-color: white;
   padding: 15px 20px;
-  height: 90px; /* Set consistent header height */
+  height: 90px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex; /* Allows flex positioning of header items */
-  justify-content: space-between; /* Ensures content inside is spaced correctly */
-  align-items: center; /* Align items vertically */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo-container {
+/* Group logos and line for unified hover effect */
+.logo-group {
   display: flex;
   align-items: center;
+  cursor: pointer; /* Indicates it's clickable */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling */
+}
+
+.logo-group:hover {
+  transform: scale(1.1); /* Grow all logos and line together */
 }
 
 .logo {
@@ -59,15 +67,60 @@ header {
   margin: 0 10px;
 }
 
+/* Inline Menu Styles for Larger Screens */
+.inline-menu {
+  display: flex;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin-left: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling on hover and click */
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: black; /* Original styling for links */
+  font-weight: bold;
+  padding: 10px 15px; /* Ensures uniform size */
+  font-size: 18px; /* Ensures the font size is consistent */
+}
+
+/* Remove purple visited link styling */
+.menu-item a:visited {
+  color: black;
+}
+
+/* Hover effect for menu items */
+.menu-item a:hover {
+  color: #6E8D23; /* Turn text color to green */
+  transform: scale(1.1); /* Slightly grow the text */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Click effect for menu items */
+.menu-item a:active {
+  transform: scale(1.15); /* Grow a bit more when clicked */
+  transition: transform 0.1s ease; /* Quick feedback for click */
+}
+
+/* Hamburger Menu */
 .menu-button {
   cursor: pointer;
+  display: none; /* Hidden by default */
 }
 
 .menu-icon {
   font-size: 24px;
   color: #333;
   transition: transform 0.3s, color 0.3s;
-  margin-left: auto; /* Ensures the menu button is pushed to the right */
 }
 
 .menu-icon:hover {
@@ -77,12 +130,12 @@ header {
 
 /* Dropdown Menu Styles */
 .dropdown-menu {
-  position: fixed; /* Dropdown is fixed to move with the page */
-  top: 90px; /* Positioned directly below the header */
+  position: fixed;
+  top: 90px;
   right: 20px;
   background-color: #ffffff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 999; /* Ensure it stays on top of other elements */
+  z-index: 999;
   width: 200px;
 }
 
@@ -94,6 +147,8 @@ header {
 
 .dropdown-item {
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-item a {
@@ -104,27 +159,49 @@ header {
   padding: 15px 20px;
 }
 
+.dropdown-item a:visited {
+  color: #333; /* Prevent purple styling on visited links */
+}
+
 .dropdown-item a:hover {
   background-color: #6E8D23;
   color: white;
   transition: background-color 0.3s;
 }
 
-/* Media Query for smaller screens */
+/* Active state for dropdown items */
+.dropdown-item a:active {
+  transform: scale(1.1); /* Grow on click */
+  transition: transform 0.1s ease; /* Quick feedback for click */
+}
+
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
+  .inline-menu {
+    display: none; /* Hide inline menu on small screens */
+  }
+
+  .menu-button {
+    display: block; /* Show hamburger menu on small screens */
   }
 
   .dropdown-menu {
     right: 0;
-    width: 100%; /* Full width on mobile */
+    width: 100%;
   }
 
   .dropdown-item {
     padding: 15px 0;
   }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -596,6 +673,7 @@ footer p {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  display: none;
 }
 
 .linkedin-icon {

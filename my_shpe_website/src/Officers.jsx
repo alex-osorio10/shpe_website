@@ -4,6 +4,7 @@ import josePhoto from './assets/images/headshots/jose_photo.webp';
 import zayraPhoto from './assets/images/headshots/zayra_photo.webp';
 import estefaniPhoto from './assets/images/headshots/estefani_photo.webp';
 import valentinaPhoto from './assets/images/headshots/valentina_photo.webp';
+import jorgePhoto from './assets/images/headshots/jorge_photo.webp';
 import alexPhoto from './assets/images/headshots/alex_photo.webp';
 import joelPhoto from './assets/images/headshots/joel_photo.webp';
 import tysonPhoto from './assets/images/headshots/tyson_photo.webp';
@@ -35,9 +36,16 @@ const officerData = [
   },
   {
     name: "Valentina Castellanos Ramirez",
-    title: "Treasurer",
+    title: "Co-Treasurer",
     department: "Civil Engineering",
     imgSrc: valentinaPhoto,
+    linkedInUrl: "https://linkedin.com"
+  },
+  {
+    name: "Jorge J. Marquez",
+    title: "Co-Treasurer",
+    department: "Mechanical Engineering",
+    imgSrc: jorgePhoto,
     linkedInUrl: "https://linkedin.com"
   },
   {

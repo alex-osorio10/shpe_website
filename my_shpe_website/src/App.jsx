@@ -1,4 +1,4 @@
-// src/App.jsx file
+// src/App.jsx
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Header';
@@ -13,6 +13,18 @@ import gameNightFlyer from './assets/images/game_night_flyer.webp';
 import pastEventFlyer from './assets/images/past_event_flyer.webp';
 import pastEventFlyer2 from './assets/images/past_event_flyer_2.webp';
 import hpEventFlyer from './assets/images/hp_event_flyer.webp'; // Import HP event flyer
+
+// Component to scroll to the top of the page on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top whenever the pathname changes (new page navigation)
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 // Scroll to a specific section if location hash is present
 const ScrollToUpcomingEvents = () => {
@@ -33,9 +45,10 @@ const ScrollToUpcomingEvents = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Ensure scroll to top on every page load */}
       <div className="app-container">
         <Header /> {/* Ensure Header is present */}
-        <ScrollToUpcomingEvents />
+        <ScrollToUpcomingEvents /> {/* Ensure scrolls to upcoming events if hash is present */}
         <Routes>
           <Route
             path="/"
@@ -45,7 +58,7 @@ function App() {
                 <UpcomingEvents
                   flyerImage={hpEventFlyer}
                   eventTitle="SHPE Convention Prep"
-                  eventDescription="Join our interactive workshop to learn more about HP and its upcoming 2024 convention opportunities!"
+                  eventDescription="Join our interactive workshop to learn more about HP and the upcoming 2024 SHPE convention!"
                   eventDetails="October 17, 2024, 6:00 PM - 7:00 PM PDT"
                   eventType="upcoming"
                 />
@@ -54,7 +67,7 @@ function App() {
                   eventTitle="Game Night"
                   eventDescription="+ Free food and drinks!"
                   eventDetails="Thursday, October 10th, 5pm - 7pm. Location: EB365 + Free Food & Drinks!"
-                  eventType="upcoming"
+                  eventType="past"
                 />
                 <UpcomingEvents
                   flyerImage={pastEventFlyer}
@@ -74,15 +87,15 @@ function App() {
             }
           />
           {/* Officers Route */}
-          <Route path="/officers" element={<Officers />} /> {/* Make sure this route is set */}
+          <Route path="/officers" element={<Officers />} /> {/* Officers section */}
           
           {/* About Route */}
           <Route path="/about" element={<About />} /> {/* About Us section */}
           
           {/* Options Route */}
-          <Route path="/options" element={<Options />} />
+          <Route path="/options" element={<Options />} /> {/* Options section */}
         </Routes>
-        <Footer />
+        <Footer /> {/* Ensure Footer is present */}
       </div>
     </Router>
   );
