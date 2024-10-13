@@ -1,4 +1,4 @@
-// App.jsx
+// src/App.jsx file
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Header';
@@ -9,9 +9,10 @@ import Options from './Options';
 import Officers from './Officers'; // Import Officers component
 import About from './About'; // Import About component
 
-import gameNightFlyer from './assets/images/game_night_flyer.jpg';
-import pastEventFlyer from './assets/images/past_event_flyer.jpg';
-import pastEventFlyer2 from './assets/images/past_event_flyer_2.jpg';
+import gameNightFlyer from './assets/images/game_night_flyer.webp';
+import pastEventFlyer from './assets/images/past_event_flyer.webp';
+import pastEventFlyer2 from './assets/images/past_event_flyer_2.webp';
+import hpEventFlyer from './assets/images/hp_event_flyer.webp'; // Import HP event flyer
 
 // Scroll to a specific section if location hash is present
 const ScrollToUpcomingEvents = () => {
@@ -41,6 +42,13 @@ function App() {
             element={
               <main className="main-content">
                 <BackgroundImage />
+                <UpcomingEvents
+                  flyerImage={hpEventFlyer}
+                  eventTitle="SHPE Convention Prep"
+                  eventDescription="Join our interactive workshop to learn more about HP and its upcoming 2024 convention opportunities!"
+                  eventDetails="October 17, 2024, 6:00 PM - 7:00 PM PDT"
+                  eventType="upcoming"
+                />
                 <UpcomingEvents
                   flyerImage={gameNightFlyer}
                   eventTitle="Game Night"

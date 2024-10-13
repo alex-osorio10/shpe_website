@@ -1,8 +1,8 @@
 // src/Footer.jsx
 import React from 'react';
-import facebookLogo from './assets/images/facebook_logo_orange.png';
-import instagramLogo from './assets/images/instagram_logo_orange.png';
-import emailLogo from './assets/images/email_logo_orange.png'; // Assuming SHPE logo for email icon
+import facebookLogo from './assets/images/facebook_logo_orange.webp';
+import instagramLogo from './assets/images/instagram_logo_orange.webp';
+import emailLogo from './assets/images/email_logo_orange.webp'; 
 
 function Footer() {
   return (

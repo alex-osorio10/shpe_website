@@ -1,15 +1,15 @@
 import React from 'react';
 import OfficerCard from './OfficerCard'; // Assuming you have an OfficerCard component already
-import josePhoto from './assets/images/headshots/jose_photo.png';
-import zayraPhoto from './assets/images/headshots/zayra_photo.png';
-import estefaniPhoto from './assets/images/headshots/estefani_photo.png';
-import valentinaPhoto from './assets/images/headshots/valentina_photo.png';
-import alexPhoto from './assets/images/headshots/alex_photo.png';
-import joelPhoto from './assets/images/headshots/joel_photo.png';
-import tysonPhoto from './assets/images/headshots/tyson_photo.png';
-import johnPhoto from './assets/images/headshots/john_photo.png';
-import ericPhoto from './assets/images/headshots/eric_photo.png';
-import eduardoPhoto from './assets/images/headshots/eduardo_photo.png';
+import josePhoto from './assets/images/headshots/jose_photo.webp';
+import zayraPhoto from './assets/images/headshots/zayra_photo.webp';
+import estefaniPhoto from './assets/images/headshots/estefani_photo.webp';
+import valentinaPhoto from './assets/images/headshots/valentina_photo.webp';
+import alexPhoto from './assets/images/headshots/alex_photo.webp';
+import joelPhoto from './assets/images/headshots/joel_photo.webp';
+import tysonPhoto from './assets/images/headshots/tyson_photo.webp';
+import johnPhoto from './assets/images/headshots/john_photo.webp';
+import ericPhoto from './assets/images/headshots/eric_photo.webp';
+import eduardoPhoto from './assets/images/headshots/eduardo_photo.webp';
 
 const officerData = [
   {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // For navigation
-import psuBackground from './assets/images/psu_background_switch.png';
-import speakersImage from './assets/images/speakers_switch.png';
-import membersImage from './assets/images/members_shpe_switch.png';
+import psuBackground from './assets/images/psu_background_switch.webp';
+import speakersImage from './assets/images/speakers_switch.webp';
+import membersImage from './assets/images/members_shpe_switch.webp';
 import psuLogo from './assets/images/psu_main_logo_green.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
