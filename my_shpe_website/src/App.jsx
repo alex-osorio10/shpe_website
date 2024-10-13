@@ -57,9 +57,9 @@ function App() {
                 <BackgroundImage />
                 <UpcomingEvents
                   flyerImage={hpEventFlyer}
-                  eventTitle="SHPE Convention Prep"
+                  eventTitle="Career Prep with HP"
                   eventDescription="Join our interactive workshop to learn more about HP and the upcoming 2024 SHPE convention!"
-                  eventDetails="October 17, 2024, 6:00 PM - 7:00 PM PDT"
+                  eventDetails="Thursday, October 17th, 6pm - 7pm. Location: EB365"
                   eventType="upcoming"
                 />
                 <UpcomingEvents

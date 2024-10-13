@@ -698,9 +698,9 @@ footer p {
 
 
 .about-us-container {
-  margin-top: 100px; /* Adjusted margin */
+  margin-top: 100px;
   padding: 20px;
-  background-color: #1A2B52; /* Set the background color outside the boxes */
+  background-color: #1A2B52;
 }
 
 .about-section-container {
@@ -709,8 +709,8 @@ footer p {
   align-items: center;
   margin-bottom: 40px;
   padding: 20px;
-  background-color: #e3ebff; /* Green box background */
-  border: 8px solid black; /* Black border */
+  background-color: #e3ebff;
+  border: 8px solid black;
 }
 
 .about-image-container {
@@ -727,7 +727,7 @@ footer p {
 .about-text {
   flex: 1;
   padding: 20px;
-  color: rgb(0, 0, 0); /* Ensure text is visible on green background */
+  color: rgb(0, 0, 0);
 }
 
 .about-title {
@@ -743,4 +743,19 @@ footer p {
 
 .about-details {
   font-size: 1rem;
+}
+
+/* Media query for smaller screens or zoomed-in views */
+@media (max-width: 768px) {
+  .about-section-container {
+    flex-direction: column; /* Stack image on top of text */
+  }
+
+  .about-image {
+    width: 100%; /* Ensure the image takes full width */
+  }
+
+  .about-text {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
 }
