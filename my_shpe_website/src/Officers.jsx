@@ -64,14 +64,14 @@ const officerData = [
   },
   {
     name: "Tyson Ly",
-    title: "Secretary",
+    title: "Co-Secretary",
     department: "Mechanical Engineering",
     imgSrc: tysonPhoto,
     linkedInUrl: "https://linkedin.com"
   },
   {
     name: "John Albert Abed",
-    title: "Secretary",
+    title: "Co-Secretary",
     department: "Mechanical Engineering",
     imgSrc: johnPhoto,
     linkedInUrl: "https://linkedin.com"
