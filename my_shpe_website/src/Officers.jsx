@@ -86,7 +86,7 @@ const officerData = [
   {
     name: "Eduardo Rico",
     title: "Ambassador",
-    department: "Ambassador",
+    department: "Civil Engineering",
     imgSrc: eduardoPhoto,
     linkedInUrl: "https://linkedin.com"
   }
