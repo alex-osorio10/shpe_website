@@ -11,6 +11,7 @@ import tysonPhoto from './assets/images/headshots/tyson_photo.webp';
 import johnPhoto from './assets/images/headshots/john_photo.webp';
 import ericPhoto from './assets/images/headshots/eric_photo.webp';
 import eduardoPhoto from './assets/images/headshots/eduardo_photo.webp';
+import yahirPhoto from './assets/images/headshots/yahir_photo.webp';
 
 const officerData = [
   {
@@ -88,6 +89,13 @@ const officerData = [
     title: "Ambassador",
     department: "Civil Engineering",
     imgSrc: eduardoPhoto,
+    linkedInUrl: "https://linkedin.com"
+  },
+  {
+    name: "Yahir Sarabia",
+    title: "Fundraising Chair",
+    department: "Mechanical Engineering",
+    imgSrc: yahirPhoto,
     linkedInUrl: "https://linkedin.com"
   }
 ];
