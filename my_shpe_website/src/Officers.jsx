@@ -12,6 +12,7 @@ import johnPhoto from './assets/images/headshots/john_photo.webp';
 import ericPhoto from './assets/images/headshots/eric_photo.webp';
 import eduardoPhoto from './assets/images/headshots/eduardo_photo.webp';
 import yahirPhoto from './assets/images/headshots/yahir_photo.webp';
+import adanPhoto from './assets/images/headshots/adan_photo.webp';
 
 const officerData = [
   {
@@ -96,6 +97,13 @@ const officerData = [
     title: "Fundraising Chair",
     department: "Mechanical Engineering",
     imgSrc: yahirPhoto,
+    linkedInUrl: "https://linkedin.com"
+  },
+  {
+    name: "Adan Hernandez",
+    title: "Graduation Chair",
+    department: "Master's of Computer Science",
+    imgSrc: adanPhoto,
     linkedInUrl: "https://linkedin.com"
   }
 ];
