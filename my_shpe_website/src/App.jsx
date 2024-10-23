@@ -60,7 +60,7 @@ function App() {
                   eventTitle="Career Prep with HP"
                   eventDescription="Join our interactive workshop to learn more about HP and the upcoming 2024 SHPE convention!"
                   eventDetails="Thursday, October 17th, 6pm - 7pm. Location: EB365"
-                  eventType="upcoming"
+                  eventType="past"
                 />
                 <UpcomingEvents
                   flyerImage={gameNightFlyer}
