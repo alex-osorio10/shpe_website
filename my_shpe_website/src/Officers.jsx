@@ -1,5 +1,5 @@
 import React from 'react';
-import OfficerCard from './OfficerCard'; // Assuming you have an OfficerCard component already
+import OfficerCard from './OfficerCard'; 
 import josePhoto from './assets/images/headshots/jose_photo.webp';
 import zayraPhoto from './assets/images/headshots/zayra_photo.webp';
 import estefaniPhoto from './assets/images/headshots/estefani_photo.webp';
@@ -101,7 +101,7 @@ const officerData = [
   },
   {
     name: "Adan Hernandez",
-    title: "Graduation Chair",
+    title: "Graduate Chair",
     department: "Master's of Computer Science",
     imgSrc: adanPhoto,
     linkedInUrl: "https://linkedin.com"
