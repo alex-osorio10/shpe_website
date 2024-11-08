@@ -16,13 +16,6 @@ import adanPhoto from './assets/images/headshots/adan_photo.webp';
 
 const officerData = [
   {
-    name: "Jose Brambila Pelayo",
-    title: "Co-President",
-    department: "Mechanical Engineering",
-    imgSrc: josePhoto,
-    linkedInUrl: "https://linkedin.com"
-  },
-  {
     name: "Zayra Coria-Bustos",
     title: "Co-President",
     department: "Science",
@@ -62,6 +55,13 @@ const officerData = [
     title: "VP of Membership",
     department: "Computer Science",
     imgSrc: joelPhoto,
+    linkedInUrl: "https://linkedin.com"
+  },
+  {
+    name: "Jose Brambila Pelayo, aka 'THE RIZZLER'",
+    title: "Co-President",
+    department: "Mechanical Engineering",
+    imgSrc: josePhoto,
     linkedInUrl: "https://linkedin.com"
   },
   {
