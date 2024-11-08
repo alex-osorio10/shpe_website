@@ -43,7 +43,7 @@ const ScrollToUpcomingEvents = () => {
 };
 
 function App() {
-  const hasUpcomingEvents = false; // Set to true if you have upcoming events to display
+  const hasUpcomingEvents = false; // Set this to false, since all events are past
 
   return (
     <Router>
@@ -71,15 +71,22 @@ function App() {
                   <section 
                     id="upcoming-events" 
                     style={{
-                      minHeight: '1px', // Minimal height
-                      padding: '0',     // Remove padding
-                      margin: '0',      // Remove margin
-                      visibility: 'hidden' // Hide the placeholder from view
+                      minHeight: '1px',
+                      padding: '0',
+                      margin: '0',
+                      visibility: 'hidden'
                     }}
                   />
                 )}
 
-                {/* Example Past Events */}
+                {/* Past Events */}
+                <UpcomingEvents
+                  flyerImage={potluckEventFlyer}
+                  eventTitle="FRIENDSGIVING POTLUCK & GENERAL MEETING"
+                  eventDescription="Join us for the SHPE Oregon Professional Friendsgiving Potluck, where we'll celebrate the season of gratitude and giving with our SHPE Familia and share a feast of favorite dishes!"
+                  eventDetails="Thursday, November 7th, 6:30pm - 9pm. Location: EB315"
+                  eventType="past"
+                />
                 <UpcomingEvents
                   flyerImage={hpEventFlyer}
                   eventTitle="Career Prep with HP"
