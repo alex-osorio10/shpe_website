@@ -1,5 +1,6 @@
 // Header.jsx
 import React, { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -9,8 +10,8 @@ import verticalLine from './assets/images/vertical_line_black.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // To check the current page
-  const navigate = useNavigate(); // To navigate between pages
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,20 +19,16 @@ const Header = () => {
 
   const handleLogoClick = () => {
     if (location.pathname === '/') {
-      // If we're on the main page, scroll to the top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Navigate to the main page if on any other page
       navigate('/');
     }
   };
 
   const handleHomeClick = () => {
     if (location.pathname === '/') {
-      // Scroll to top if on the home page
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Otherwise, navigate to the home page
       navigate('/');
     }
   };
@@ -47,12 +44,13 @@ const Header = () => {
       {/* Inline Menu for Larger Screens */}
       <nav className="inline-menu">
         <ul className="menu-list">
-          {/* Use Link for Home for consistent styling */}
           <li className="menu-item">
             <Link to="/" onClick={handleHomeClick}>Home</Link>
           </li>
           <li className="menu-item">
-            <Link to="/#upcoming-events">Events</Link>
+            <ScrollLink to="upcoming-events" smooth={true} duration={500} offset={-120} onClick={() => console.log('Scrolling to events')}>
+              Events
+            </ScrollLink>
           </li>
           <li className="menu-item">
             <Link to="/about">About Us</Link>
@@ -76,7 +74,9 @@ const Header = () => {
               <Link to="/" onClick={handleHomeClick}>Home</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/#upcoming-events" onClick={toggleMenu}>Events</Link>
+              <ScrollLink to="upcoming-events" smooth={true} duration={500} offset={-120} onClick={toggleMenu}>
+                Events
+              </ScrollLink>
             </li>
             <li className="dropdown-item">
               <Link to="/about" onClick={toggleMenu}>About Us</Link>

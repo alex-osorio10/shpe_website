@@ -6,20 +6,20 @@ import Footer from './Footer';
 import BackgroundImage from './BackgroundImage';
 import UpcomingEvents from './UpcomingEvents';
 import Options from './Options';
-import Officers from './Officers'; // Import Officers component
-import About from './About'; // Import About component
+import Officers from './Officers'; 
+import About from './About'; 
 
 import gameNightFlyer from './assets/images/game_night_flyer.webp';
 import pastEventFlyer from './assets/images/past_event_flyer.webp';
 import pastEventFlyer2 from './assets/images/past_event_flyer_2.webp';
-import hpEventFlyer from './assets/images/hp_event_flyer.webp'; // Import HP event flyer
+import hpEventFlyer from './assets/images/hp_event_flyer.webp';
+import potluckEventFlyer from './assets/images/potluck_event_flyer.jpg';
 
 // Component to scroll to the top of the page on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to the top whenever the pathname changes (new page navigation)
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -43,18 +43,43 @@ const ScrollToUpcomingEvents = () => {
 };
 
 function App() {
+  const hasUpcomingEvents = false; // Set to true if you have upcoming events to display
+
   return (
     <Router>
-      <ScrollToTop /> {/* Ensure scroll to top on every page load */}
+      <ScrollToTop />
       <div className="app-container">
-        <Header /> {/* Ensure Header is present */}
-        <ScrollToUpcomingEvents /> {/* Ensure scrolls to upcoming events if hash is present */}
+        <Header />
+        <ScrollToUpcomingEvents />
         <Routes>
           <Route
             path="/"
             element={
               <main className="main-content">
                 <BackgroundImage />
+                
+                {/* Conditional Placeholder for Upcoming Events */}
+                {hasUpcomingEvents ? (
+                  <UpcomingEvents
+                    flyerImage={potluckEventFlyer}
+                    eventTitle="FRIENDSGIVING POTLUCK & GENERAL MEETING"
+                    eventDescription="Join us for the SHPE Oregon Professional Friendsgiving Potluck, where we'll celebrate the season of gratitude and giving with our SHPE Familia and share a feast of favorite dishes!"
+                    eventDetails="Thursday, November 7th, 6:30pm - 9pm. Location: EB315"
+                    eventType="upcoming"
+                  />
+                ) : (
+                  <section 
+                    id="upcoming-events" 
+                    style={{
+                      minHeight: '1px', // Minimal height
+                      padding: '0',     // Remove padding
+                      margin: '0',      // Remove margin
+                      visibility: 'hidden' // Hide the placeholder from view
+                    }}
+                  />
+                )}
+
+                {/* Example Past Events */}
                 <UpcomingEvents
                   flyerImage={hpEventFlyer}
                   eventTitle="Career Prep with HP"
@@ -86,16 +111,11 @@ function App() {
               </main>
             }
           />
-          {/* Officers Route */}
-          <Route path="/officers" element={<Officers />} /> {/* Officers section */}
-          
-          {/* About Route */}
-          <Route path="/about" element={<About />} /> {/* About Us section */}
-          
-          {/* Options Route */}
-          <Route path="/options" element={<Options />} /> {/* Options section */}
+          <Route path="/officers" element={<Officers />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/options" element={<Options />} />
         </Routes>
-        <Footer /> {/* Ensure Footer is present */}
+        <Footer />
       </div>
     </Router>
   );
